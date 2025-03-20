@@ -1,29 +1,26 @@
-pipeline{
-  agent any
-  stages{
-    stage("Compile"){
-      steps{
-        bat 'javac Test.java'
-      }
-
+pipeline {
+    agent any
+    stages {
+        stage("Compile") {
+            steps {
+                bat 'javac Test.java'
+            }
+        }
+        stage("run java program") {
+            steps {
+                bat 'java Test'
+            }
+        }
     }
-    stage("run java program"){
-      steps{
-        bat  'java Test'
-      }
+    post {
+        always {
+            bat 'echo "this is always"'
+        }
+        success {
+            bat 'echo "this is a success"'
+        }
+        failure {
+            bat 'echo "this is a failure"'
+        }
     }
-  }
-  post{
-    always{
-      bat 'echo "this is a always"'
-    }
-    sucess{
-      bat 'echo "this is a suceess"'
-    }
-    failure{
-      bat 'echo "this is a failure"'
-    }
-
-  }
 }
-
