@@ -1,4 +1,3 @@
-
 pipeline{
   agent any
   stages{
@@ -13,6 +12,18 @@ pipeline{
         bat  'java Test'
       }
     }
+  }
+  post{
+    always{
+      bat 'echo "this is a always"'
+    }
+    sucess{
+      bat 'echo "this is a suceess"'
+    }
+    failure{
+      bat 'echo "this is a failure"'
+    }
+
   }
 }
 
