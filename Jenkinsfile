@@ -1,3 +1,4 @@
+
 pipeline{
   agent any
   stages{
@@ -5,11 +6,13 @@ pipeline{
       steps{
         bat 'echo "javac Test.java"'
       }
+
+    }
     stage("run java program"){
       steps{
         bat 'echo "java Test"'
       }
     }
-    }
   }
 }
+
