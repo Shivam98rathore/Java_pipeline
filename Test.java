@@ -1,7 +1,5 @@
 class Test{
-  public Static void main(String []args){
-
+  public static void main(String []args){
     System.out.println("This is example of pipeline");
-    
   }
 }
