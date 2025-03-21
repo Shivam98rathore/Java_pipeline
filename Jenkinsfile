@@ -1,4 +1,4 @@
-pipeline {
+// pipeline {
     environment {
         Version = "3.6"
     }
@@ -8,7 +8,7 @@ pipeline {
             steps {
                 bat 'javac Test.java'
                 bat 'echo %Version%'
-                bat 'echo "${env.Version}"'
+                // bat 'echo "${env.Version}"' not working 
             }
         }
         stage("run java program") {
