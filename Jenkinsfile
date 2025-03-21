@@ -8,7 +8,7 @@ pipeline {
             steps {
                 bat 'javac Test.java'
                 bat 'echo %Version%'
-                // bat 'echo ${env.Version}'
+                bat 'echo "${env.Version}"'
             }
         }
         stage("run java program") {
