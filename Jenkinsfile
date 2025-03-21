@@ -1,9 +1,13 @@
 pipeline {
+    enivorment{
+        Version = "3.6"
+    }
     agent any
     stages {
         stage("Compile") {
             steps {
                 bat 'javac Test.java'
+                bat 'echo ${env.Version}'
             }
         }
         stage("run java program") {
