@@ -1,5 +1,5 @@
 pipeline {
-    enivorment{
+    environment {
         Version = "3.6"
     }
     agent any
